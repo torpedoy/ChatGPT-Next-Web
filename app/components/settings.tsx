@@ -220,31 +220,6 @@ export function Settings(props: { closeSettings: () => void }) {
             </Popover>
           </SettingItem>
 
-          <SettingItem
-            title={Locale.Settings.Update.Version(currentId)}
-            subTitle={
-              checkingUpdate
-                ? Locale.Settings.Update.IsChecking
-                : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
-            }
-          >
-            {checkingUpdate ? (
-              <div />
-            ) : hasNewVersion ? (
-              <Link href={UPDATE_URL} target="_blank" className="link">
-                {Locale.Settings.Update.GoToUpdate}
-              </Link>
-            ) : (
-              <IconButton
-                icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Update.CheckUpdate}
-                onClick={() => checkUpdate(true)}
-              />
-            )}
-          </SettingItem>
-
           <SettingItem title={Locale.Settings.SendKey}>
             <select
               value={config.submitKey}
@@ -283,7 +258,7 @@ export function Settings(props: { closeSettings: () => void }) {
             </select>
           </ListItem>
 
-          <SettingItem title={Locale.Settings.Lang.Name}>
+          {/* <SettingItem title={Locale.Settings.Lang.Name}>
             <select
               value={getLang()}
               onChange={(e) => {
@@ -296,7 +271,7 @@ export function Settings(props: { closeSettings: () => void }) {
                 </option>
               ))}
             </select>
-          </SettingItem>
+          </SettingItem> */}
 
           <SettingItem
             title={Locale.Settings.FontSize.Title}
@@ -342,7 +317,7 @@ export function Settings(props: { closeSettings: () => void }) {
             ></input>
           </SettingItem>
         </List>
-        <List>
+        {/* <List>
           <SettingItem
             title={Locale.Settings.Prompt.Disable.Title}
             subTitle={Locale.Settings.Prompt.Disable.SubTitle}
@@ -372,7 +347,7 @@ export function Settings(props: { closeSettings: () => void }) {
               onClick={() => showToast(Locale.WIP)}
             />
           </SettingItem>
-        </List>
+        </List> */}
         <List>
           {enabledAccessControl ? (
             <SettingItem
@@ -406,7 +381,7 @@ export function Settings(props: { closeSettings: () => void }) {
             />
           </SettingItem>
 
-          <SettingItem
+          {/* <SettingItem
             title={Locale.Settings.Usage.Title}
             subTitle={
               showUsage
@@ -428,7 +403,7 @@ export function Settings(props: { closeSettings: () => void }) {
                 onClick={checkUsage}
               />
             )}
-          </SettingItem>
+          </SettingItem> */}
 
           <SettingItem
             title={Locale.Settings.HistoryCount.Title}
