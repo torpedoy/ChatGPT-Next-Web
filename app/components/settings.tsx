@@ -362,6 +362,7 @@ export function Settings(props: { closeSettings: () => void }) {
                   accessStore.updateCode(e.currentTarget.value);
                 }}
               />
+              <img src="/qrcode.jpg" width={80} />
             </SettingItem>
           ) : (
             <></>
