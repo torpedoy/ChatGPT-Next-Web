@@ -354,15 +354,17 @@ export function Settings(props: { closeSettings: () => void }) {
               title={Locale.Settings.AccessCode.Title}
               subTitle={Locale.Settings.AccessCode.SubTitle}
             >
-              <PasswordInput
-                value={accessStore.accessCode}
-                type="text"
-                placeholder={Locale.Settings.AccessCode.Placeholder}
-                onChange={(e) => {
-                  accessStore.updateCode(e.currentTarget.value);
-                }}
-              />
-              <img src="/qrcode.jpg" width={80} />
+              <div>
+                <PasswordInput
+                  value={accessStore.accessCode}
+                  type="text"
+                  placeholder={Locale.Settings.AccessCode.Placeholder}
+                  onChange={(e) => {
+                    accessStore.updateCode(e.currentTarget.value);
+                  }}
+                />
+                <img src="/qrcode.jpg" width={80} />
+              </div>
             </SettingItem>
           ) : (
             <></>
