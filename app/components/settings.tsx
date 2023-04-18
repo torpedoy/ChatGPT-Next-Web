@@ -354,7 +354,8 @@ export function Settings(props: { closeSettings: () => void }) {
               title={Locale.Settings.AccessCode.Title}
               subTitle={Locale.Settings.AccessCode.SubTitle}
             >
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <img src="/qrcode.jpg" width={80} />
                 <PasswordInput
                   value={accessStore.accessCode}
                   type="text"
@@ -363,7 +364,6 @@ export function Settings(props: { closeSettings: () => void }) {
                     accessStore.updateCode(e.currentTarget.value);
                   }}
                 />
-                <img src="/qrcode.jpg" width={80} />
               </div>
             </SettingItem>
           ) : (
